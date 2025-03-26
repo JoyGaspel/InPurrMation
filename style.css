@@ -547,6 +547,10 @@ footer {
     padding: 20px 10px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
+    position: relative; /* Default positioning */
+    bottom: 0; /* Ensure it stays at the bottom */
+    width: 100%; /* Full width */
+    margin-top: auto; /* Push footer to the bottom if content is short */
 }
 
 .footer-content {
