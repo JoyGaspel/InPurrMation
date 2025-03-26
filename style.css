@@ -191,6 +191,9 @@ nav a:hover {
     border: 8px solid #fff;
     position: relative;
     flex-shrink: 0; /* Prevent shrinking */
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .card-img {
@@ -267,6 +270,21 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
+}
+
+.accessory-title {
+    font-size: 1.5rem;
+    color: #7b6553;
+    margin-top: 1rem;
+    font-family: Georgia, cursive;
+    margin-bottom: 1rem;
+}
+.accessory-title2 {
+    font-size: 3rem;
+    color: #000000;
+    margin-top: 1rem;
+    font-family: Georgia, cursive;
+    font-weight: bold;
 }
 
 .accessory {
@@ -520,4 +538,93 @@ nav a:hover {
 .mission-image img {
     width: 100%;
     border-radius: 10px;
+}
+
+/* Footer Section Styling */
+footer {
+    background-color: #d5e2c6; /* Dark background for contrast */
+    color: #000000; /* White text for readability */
+    padding: 20px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 300px; /* Flexible width with a minimum of 300px */
+    margin: 10px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #705c4b; /* Accent color for headings */
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #3d3831; /* Accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #997c64; /* Highlight effect on hover */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #444; /* Subtle border for separation */
+    padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center; /* Center-align text for better readability */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 15px 5px; /* Reduce padding for smaller screens */
+    }
+
+    .footer-section h3 {
+        font-size: 1.2rem; /* Adjust heading size */
+    }
+
+    .footer-section p,
+    .footer-section ul {
+        font-size: 0.9rem; /* Adjust text size */
+    }
 }
