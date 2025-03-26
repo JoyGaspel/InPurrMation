@@ -280,11 +280,13 @@ nav a:hover {
 /*Buttons content*/
 .content {
   display: none; /*function or method to hide the contents */
-  scroll-margin: 600px;
+  scroll-margin: smooth;
   text-align: center;
   flex-direction: column;
   align-items: center;
   margin: 5vw;
+  transition: all 0.5s;
+  padding: 10px;
 }
 .content p {
   text-align: justify;
