@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breed Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .tab:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .tab.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+            font-weight: bold;
+        }
+        
+        .content {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            border-radius: 0 5px 5px 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        #Overview:target,
+        #Characteristics:target {
+            display: block;
+        }
+        
+        #Overview:target ~ .tabs .tab[href="#Overview"],
+        #Characteristics:target ~ .tabs .tab[href="#Characteristics"] {
+            background-color: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+            font-weight: bold;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        #Characteristics td:first-child {
+            width: 70%;
+        }
+        
+        #Characteristics td:last-child {
+            width: 30%;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Default view - show Overview */
+        #Overview {
+            display: block;
+        }
+        
+        #Overview ~ .tabs .tab[href="#Overview"] {
+            background-color: white;
+            border-bottom: 1px solid white;
+            margin-bottom: -1px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">Compare Breed</div>
+    
+    <div id="Overview" class="content">
+        <table>
+            <tr>
+                <th>ORIGIN</th>
+                <td>Abyssinia (Ethiopia)</td>
+            </tr>
+            <tr>
+                <th>HEIGHT</th>
+                <td>8-10 inches</td>
+            </tr>
+            <tr>
+                <th>ADULT WEIGHT</th>
+                <td>6-10 pounds</td>
+            </tr>
+            <tr>
+                <th>LIFE SPAN</th>
+                <td>14-17+ years</td>
+            </tr>
+            <tr>
+                <th>TEMPERAMENT</th>
+                <td>Playful, willful, active, intelligent</td>
+            </tr>
+            <tr>
+                <th>OTHER NAMES</th>
+                <td>Aby</td>
+            </tr>
+            <tr>
+                <th>GROUP</th>
+                <td>Medium-sized short-haired</td>
+            </tr>
+            <tr>
+                <th>PRICE</th>
+                <td>$1,000-$2,000 (57-115k PHP)</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="Characteristics" class="content">
+        <table>
+            <tr>
+                <th>Characteristics</th>
+                <th>Percentage</th>
+            </tr>
+            <tr>
+                <td><b>Affection Level:</b> Breeds with a high affection level want to give and receive a lot of attention, while less-affectionate breeds are not as interested in petting and snuggles.</td>
+                <td>50%</td>
+            </tr>
+            <tr>
+                <td><b>Activity Level:</b> Breeds with high activity levels will engage more in active play and demand more space and attention.</td>
+                <td>90%</td>
+            </tr>
+            <tr>
+                <td><b>Pet-Friendly:</b> How well the breed tends to get along with cats, dogs, and other pets.</td>
+                <td>80%</td>
+            </tr>
+            <tr>
+                <td><b>Kid-Friendly:</b> Breeds with a higher rating in this area tend to be gentle and patient, while lower-rated breeds may feel uncomfortable with children.</td>
+                <td>80%</td>
+            </tr>
+            <tr>
+                <td><b>Sociability:</b> Breeds with a higher sociability rating will want to spend time with you all day, while less-sociable breeds seldom seek out human interaction.</td>
+                <td>80%</td>
+            </tr>
+            <tr>
+                <td><b>Intelligence:</b> Breeds with higher intelligence ratings are more curious, investigative, and easy to train. Less-intelligent breeds are less trainable but often laid-back and easygoing.</td>
+                <td>90%</td>
+            </tr>
+            <tr>
+                <td><b>Playfulness:</b> Breeds that score higher in this area have strong hunting instincts that make them great playtime companions.</td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td><b>Independence:</b> Breeds that score higher in this area are able to spend hours alone, while less-independent breeds require plenty of attention.</td>
+                <td>60%</td>
+            </tr>
+            <tr>
+                <td><b>Vocality:</b> A higher rating in this area indicates a breed prone to plenty of meowing and other vocalizations, while less-vocal breeds are happy to stay quiet.</td>
+                <td>60%</td>
+            </tr>
+            <tr>
+                <td><b>Grooming:</b> Breeds with higher grooming scores require more maintenance like brushing and bathing, while lower-scored breeds are virtually maintenance-free.</td>
+                <td>50%</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="tabs">
+        <a href="#Overview" class="tab">Overview</a>
+        <a href="#Characteristics" class="tab">Characteristics</a>
+    </div>
+</body>
+</html>

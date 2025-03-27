@@ -1,7 +1,24 @@
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  transition-behavior: smooth;
+}
+
+/* Smooth transitions for all elements */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Smooth button hover effect */
+.buttons a:hover {
+  background: #799956;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Smooth card hover effect */
+.card .read-profile:hover {
+  transform: scale(0.95);
+  transition: all 0.3s ease-in-out;
 }
 /* Global Styles */
 * {
@@ -299,32 +316,95 @@ nav a:hover {
   display: block; /*reveal the content whenever the button is pressed*/
 }
 /*Buttons*/
-.buttons{ 
+.buttons {
   display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d5e2c6;
+  padding: 10px;
   justify-content: center;
-  margin: 20px 0 0 0;
-  font-size: x-large; /* Increased font size */
 }
 
 .buttons a {
   padding: 10px 20px;
-  margin: 5px;
-  width: 200px;
-  background-color: #d5e2c6;
-  color: rgb(0, 0, 0);
+  margin-right: 5px;
   text-decoration: none;
-  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+  background: #d5e2c6;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   justify-content: center;
 }
 
 .buttons a:hover {
-  background-color: #e18bf0;
+  background: #799956;
+}
+
+.content {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  font-weight: bold;
+  width: 30%;
+  color: #555;
+}
+
+td {
+  color: #333;
+}
+
+tr:last-child th,
+tr:last-child td {
+  border-bottom: none;
 }
 
 .landscape {
   display: flex;
   justify-content: center;
-  margin: 20px 0 0 0;
+  align-items: center; /* Centers the picture vertically */
+  height: 500px;
+  width: 700px;
+  margin: 0 auto; /* Centers the landscape horizontally within its container */
+  overflow: hidden; /* Ensures the image doesn't overflow the container */
+}
+
+.landscape img {
+  height: 100%; /* Ensures the image fits the height */
+  width: auto; /* Maintains the aspect ratio */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .landscape {
+    height: 300px; /* Adjust height for smaller screens */
+    width: 100%; /* Make it full width */
+  }
+
+  .landscape img {
+    height: auto; /* Adjust image height */
+    width: 100%; /* Ensure it fits the container width */
+  }
+}
+
+@media (max-width: 480px) {
+  .landscape {
+    height: 200px; /* Further reduce height for very small screens */
+  }
 }
 /*table*/
 table {
@@ -372,27 +452,30 @@ th, td {
   max-width: 1000px;
   border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
 }
 .breed-image-2 {
-  width: 500px;
-  max-width: 500px;
+  width: 100%;
+  max-width: 1000px;
   border-radius: 10px;
   margin-top: 20px;
-  padding-left: 20px;
   display: block;
+  text-align: center;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: auto; /* Centers the image horizontally */
 }
 .content-section {
   display: flex;
   justify-content: space-between;
-  gap: 18px;
+  gap: 15px;
   align-items: center;
-  padding: 0 80px; /* Adds padding to the sides */
+  padding: 0 30px; /* Adds padding to the sides */
 }
 
 .content-text {
-  width: 90%;
+  width: 100%;
   text-align: justify;
   flex-direction: column;
   align-items: center;
@@ -401,6 +484,31 @@ th, td {
   font-size: 1.5em;
   line-height: 1.6;
   margin-top: 1px;
+}
+/* Content-specific designs */
+#Nutrition {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Grooming {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Exercise {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Health {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+.content p {
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 /* Responsive Media Queries */
