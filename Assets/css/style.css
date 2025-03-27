@@ -17,56 +17,6 @@ body {
     overflow-x: hidden;
     align-items: center;
 }
-
-/* Header Styles */
-header {
-    background-color: #d5e2c6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Changed from flex-direction: column */
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-}
-
-/* Logo styles remain the same */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo a img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-.logo span {
-    font-size: 2rem;
-    font-family: Georgia, cursive;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Navigation styles - Match breeds.css */
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-nav a {
-    margin-left: 1.3rem;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.3rem;
-}
-
-nav a:hover {
-    color: #db63e1;
-}
-
 /* Search Bar Styles
 .search-bar {
     display: flex;
@@ -396,11 +346,6 @@ nav a:hover {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    nav a {
-        font-size: 1rem;
-        margin: 0 0.5rem;
-    }
     
     .logo span {
         font-size: 1.5rem;
@@ -486,17 +431,6 @@ nav a:hover {
         flex-direction: row; /* Keep horizontal layout */
         padding: 1rem;
     }
-
-    nav {
-        margin-top: 1rem;
-        justify-content: center; /* Center nav items */
-        width: 100%;
-    }
-
-    nav a {
-        margin: 0 0.8rem; /* Adjust spacing */
-        font-size: 1.1rem;
-    }
 }
 
 
@@ -507,10 +441,6 @@ nav a:hover {
 
     .logo span {
         font-size: 1.5rem;
-    }
-
-    nav a {
-        font-size: 0.9rem;
     }
 
     .hero h1 {
@@ -546,10 +476,6 @@ nav a:hover {
     .centered-text {
         font-size: 1rem;
         padding: 0 10px; /* Adjust padding for better readability */
-    }
-    nav a {
-        font-size: 1rem;
-        margin: 0 0.5rem;
     }
     
     .logo span {
@@ -683,73 +609,3 @@ footer {
         font-size: 0.9rem; /* Adjust text size */
     }
 }
-
-/*BREEDS CSS*/
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
-    transition-behavior: smooth;
-  }
-  /* Global Styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Georgia, cursive;
-    background-color: #f4e4d4;
-    color: #0b0b0b;
-    overflow-x: hidden;
-    align-items: center;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #d5e2c6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-  }
-  
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo a img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .logo span {
-    font-size: 2rem;
-    font-family: Georgia, cursive;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  nav a {
-    margin-left: 1.3rem;
-    text-decoration: none;
-    color: #333;
-    font-size: 1.3rem;
-  }
-  
-  nav a:hover {
-    color: #db63e1;
-    text-shadow: #333;
-  }
-  
