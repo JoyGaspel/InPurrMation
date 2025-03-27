@@ -109,27 +109,24 @@ body {
   font-weight: bold;
   color: #333;
 }
+
 /* Cat Eye Picture */
 .image-container {
   position: relative;
-  width: 100%; /* Ensure it takes full width of the container */
-  max-width: 1200px; /* Limit the maximum width */
+  width: 100%;
   height: auto;
-  margin: 0 auto; /* Center the image container */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .image-container {
-    width: 90%; /* Reduce width for smaller screens */
-    height: auto; /* Maintain aspect ratio */
+    height: auto; /* Adjust height for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .image-container {
-    width: 100%; /* Full width for very small screens */
-    height: auto; /* Maintain aspect ratio */
+    height: auto; /* Ensure it adapts well on very small screens */
   }
 }
 
