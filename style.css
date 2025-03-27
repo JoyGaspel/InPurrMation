@@ -100,17 +100,21 @@ nav a:hover {
     font-size: 4rem;
     color: #997c64;
     margin-bottom: 1rem;
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
+    max-width: 100%; /* Ensure it adapts to container width */
 }
 
 @media (max-width: 480px) {
     .hero h1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+        margin-bottom: 0.5rem; /* Adjust spacing for better layout */
+        max-width: 90%; /* Add max-width for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
         font-size: 2rem;
+        max-width: 95%; /* Add max-width for medium screens */
     }
 }
 
@@ -128,6 +132,33 @@ nav a:hover {
     height: auto;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background-color: #e0e0e0;
+}
+
+.back-to-top img {
+  width: 90px;
+  height: 90px;
+}
+
 /* Cat paw styling */
 .cat-paw {
     width: 100px;
@@ -140,6 +171,11 @@ nav a:hover {
     font-size: 1.5rem;
     color: #5a4b3b;
     max-width: 800px;
+    word-spacing: 1rem;
+    justify-content: justify;
+    text-spacing-trim: trim;
+    margin-top: 1rem;
+    font-family: Georgia, cursive;
 }
 
 /* Cat Eye Picture */
