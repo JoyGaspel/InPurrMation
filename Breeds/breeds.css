@@ -515,6 +515,27 @@ footer {
 }
 
 /* Media Queries */
+@media (max-width: 1200px) {
+  .breed-image-2 {
+    width: 700px;
+    max-width: 800px;
+  }
+  .breed-image {
+    width: 700px;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 992px) {
+  .breed-image-2 {
+    width: 600px;
+    max-width: 700px;
+  }
+  .breed-image {
+    width: 600px;
+    max-width: 700px;
+  }
+}
 @media (max-width: 1024px) {
   html {
     scroll-padding-top: 140px;
@@ -578,6 +599,14 @@ footer {
     font-size: 1rem;
     top: auto;
   }
+  .breed-image {
+    width: 500px;
+    max-width: 600px;
+  }
+  .breed-image-2 {
+    width: 500px;
+    max-width: 600px;
+  }
 
   .meowtegory {
     gap: 1.5rem;
@@ -629,6 +658,12 @@ footer {
 
   .footer-section {
     text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .breed-image-2 {
+    width: 350px;
+    max-width: 400px;
   }
 }
 
