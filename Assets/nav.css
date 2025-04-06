@@ -1,0 +1,205 @@
+/* Enhanced Smooth Transitions */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* This should match your header's height */
+}
+
+body {
+  /* Add these new properties */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  padding-top: 0; /* Remove any existing padding-top */
+}
+
+/* Page Transition Effect */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Enhanced Button Transitions */
+.buttons a, .nav2 a, .card .read-profile, .back-to-top {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Smooth Scroll Offset for Fixed Header */
+html {
+  scroll-padding-top: 80px; /* Adjust based on your header height */
+}
+
+/* Header Styles */
+header {
+  background-color: #d5e2c6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo a img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: width 0.3s, height 0.3s; /* Smooth resizing */
+}
+
+.logo span {
+  font-size: 2rem;
+  font-family: Georgia, cursive;
+  font-weight: bold;
+  color: #333;
+  transition: font-size 0.3s; /* Smooth resizing */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  margin: 0 0.8rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: #db63e1;
+}
+/* Button Styles */
+button, .buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  width: 200px;
+  background-color: #d5e2c6;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover, .buttons a:hover {
+  background-color: #e18bf0;
+  transform: scale(1.05);
+}
+
+button:active, .buttons a:active {
+  background-color: #c5d2b6;
+  transform: scale(0.95);
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 70px;
+  }
+  header {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .logo a img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logo span {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    padding: 0.4rem 0.8rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 0 0.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px; /* Adjusted for stacked layout */
+  }
+  header {
+    padding: 0.6rem 1rem;
+    flex-direction: column; /* Stack logo and nav vertically */
+    align-items: center;
+  }
+
+  .logo a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo span {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    padding: 0.3rem 0.6rem;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    scroll-padding-top: 110px;
+  }
+  header {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .logo a img {
+    width: 20px;
+    height: 35px;
+    flex-direction: right;
+  }
+
+  .logo span {
+    font-size: 1rem;
+    flex-direction: right;
+  }
+
+  nav {
+    flex-direction: right; /* Stack nav items vertically */
+    padding: 0.2rem 0.4rem;
+  }
+  .buttons {
+    gap: 4px;
+    padding: 6px;
+  }
+  
+  .buttons a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.8rem;
+    min-width: 80px;
+    border-radius: 4px 4px 0 0;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    margin: 0.3rem 0;
+  }
+}
