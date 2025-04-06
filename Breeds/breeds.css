@@ -32,7 +32,7 @@ body.fade-out {
 /* Smooth Scroll Offset for Fixed Header */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Adjust based on your header height */
+  scroll-padding-top: 100px; /* Adjust based on your header height */
 }
 
 /* Trivia Section Styles */
@@ -126,7 +126,7 @@ nav a:hover {
 }
 /* Nav2 Styles - Fixed Horizontal Navigation */
 .nav2 {
-  position: sticky;
+  position: fixed;
   top: 85px; /* Fixed position below the main header */
   background-color: #f4e4d4; /* Match your body background */
   z-index: 999; /* Slightly lower than main header */
@@ -145,7 +145,7 @@ nav a:hover {
   display: inline-flex;
   list-style: none;
   padding: 0 20px;
-  margin: 0 auto;
+  margin-left: 300px;
   gap: 10px;
 }
 
@@ -503,6 +503,301 @@ th, td {
   background-color: #cab5a4;
 }
 
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #f8f8f8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background-color: #e0e0e0;
+}
+
+.back-to-top img {
+  width: 90px;
+  height: 90px;
+}
+
+/* Footer */
+footer {
+  background-color: #d5e2c6;
+  color: #000000;
+  padding: 20px 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #705c4b;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #3d3831;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #997c64;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 320px) {
+  .nav2{
+    top: 100px;
+  }
+
+  .nav2 ul{
+    margin-left: 1250px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .nav2{
+    top: 100px;
+  }
+
+  .nav2 ul{
+    margin-left: 1200px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 376px) and (max-width: 425px) {
+  .nav2{
+    top: 80px;
+  }
+
+  .nav2 ul{
+    margin-left: 1150px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+}
+
+@media only screen and (min-width: 426px) and (max-width: 480px) {
+  .nav2{
+    top: 75px;
+  }
+
+  .nav2 ul{
+    margin-left: 1100px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+
+  .nav2{
+    top: 85px;
+  }
+
+  .nav2 ul{
+    margin-left: 850px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 100%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 888px) {
+  .nav2{
+    top: 100px;
+  }
+
+  .nav2 ul{
+    margin-left: 780px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 100%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 888px) and (max-width: 1024px) {
+  .nav2{
+    top: 70px;
+  }
+
+  .nav2 ul{
+    margin-left: 700px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 100%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1062px) {
+  .nav2{
+    top: 120px;
+  }
+
+  .nav2 ul{
+    margin-left: 700px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 100%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+
+}
+
+/* Content-specific designs */
+#Nutrition {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Grooming {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Exercise {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
+#Health {
+  border-left: 5px solid #6a8c6b;
+  background-color: #cab5a4;
+}
+
 /* ==================== */
   /* BACK TO TOP BUTTON */
   /* ==================== */
@@ -825,169 +1120,4 @@ footer {
     height: 180px;
   }
 }
-/* Nav2 for mobile devices */
-@media screen and (max-width: 768px) {
-  .nav2 {
-    top: 95px; /* Adjusted for mobile */
-    padding: 5px 0;
-  }
-  .nav2 a {
-    font-size: 1rem;
-    padding: 5px 10px;
-  }
-  .nav2 ul {
-    gap: 8px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav2 li {
-    padding: 3px 5px;
-    white-space: nowrap; /* Prevent li items from wrapping */
-  }
-  .nav2 a:hover {
-    padding: 5px 10px;
-    font-size: 1.1rem;
-  }
-  .nav2 a:active {
-    padding: 5px 10px;
-    font-size: 1rem;
-  }
-  .nav2 a:focus {
-    padding: 5px 10px;
-    font-size: 1.1rem;
-  }
-  .nav2 a:focus-visible {
-    padding: 5px 10px;
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .nav2 a {
-    font-size: 0.9rem;
-    padding: 4px 9px;
-  }
-  .nav2 ul {
-    gap: 7px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav2 li {
-    padding: 2px 4px;
-    white-space: nowrap; /* Prevent li items from wrapping */
-  }
-  .nav2 a:hover {
-    padding: 4px 9px;
-    font-size: 1rem;
-  }
-  .nav2 a:active {
-    padding: 4px 9px;
-    font-size: 0.9rem;
-  }
-  .nav2 a:focus {
-    padding: 4px 9px;
-    font-size: 1rem;
-  }
-  .nav2 a:focus-visible {
-    padding: 4px 9px;
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .nav2 a {
-    font-size: 0.8rem;
-    padding: 3px 8px;
-  }
-  .nav2 ul {
-    gap: 6px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav2 li {
-    padding: 1px 3px;
-    white-space: nowrap; /* Prevent li items from wrapping */
-  }
-  .nav2 a:hover {
-    padding: 3px 8px;
-    font-size: 0.9rem;
-  }
-  .nav2 a:active {
-    padding: 3px 8px;
-    font-size: 0.8rem;
-  }
-  .nav2 a:focus {
-    padding: 3px 8px;
-    font-size: 0.9rem;
-  }
-  .nav2 a:focus-visible {
-    padding: 3px 8px;
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .nav2 a {
-    font-size: 0.7rem;
-    padding: 2px 7px;
-  }
-  .nav2 ul {
-    gap: 5px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav2 li {
-    padding: 0.5px 2px;
-    white-space: nowrap; /* Prevent li items from wrapping */
-  }
-  .nav2 a:hover {
-    padding: 2px 7px;
-    font-size: 0.8rem;
-  }
-  .nav2 a:active {
-    padding: 2px 7px;
-    font-size: 0.7rem;
-  }
-  .nav2 a:focus {
-    padding: 2px 7px;
-    font-size: 0.8rem;
-  }
-  .nav2 a:focus-visible {
-    padding: 2px 7px;
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .nav2 a {
-    font-size: 0.6rem;
-    padding: 1px 6px;
-  }
-  .nav2 ul {
-    gap: 4px;
-    overflow-x: auto; /* Ensure horizontal scrolling */
-    -webkit-overflow-scrolling: touch;
-  }
-  .nav2 li {
-    padding: 0.5px 1px;
-    white-space: nowrap; /* Prevent li items from wrapping */
-  }
-  .nav2 a:hover {
-    padding: 1px 6px;
-    font-size: 0.7rem;
-  }
-  .nav2 a:active {
-    padding: 1px 6px;
-    font-size: 0.6rem;
-  }
-  .nav2 a:focus {
-    padding: 1px 6px;
-    font-size: 0.7rem;
-  }
-  .nav2 a:focus-visible {
-    padding: 1px 6px;
-    font-size: 0.7rem;
-  }
-}
-
 /* End of CSS */
