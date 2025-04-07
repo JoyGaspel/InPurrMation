@@ -2,13 +2,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px; /* This should match your header's height */
-}
-
-body {
-  /* Add these new properties */
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  padding-top: 0; /* Remove any existing padding-top */
+  transition: all 0.3s ease;
 }
 
 /* Page Transition Effect */
@@ -30,12 +24,10 @@ html {
 /* Header Styles */
 header {
   background-color: #d5e2c6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -51,7 +43,7 @@ header {
   height: 50px;
   margin-right: 10px;
   cursor: pointer;
-  transition: width 0.3s, height 0.3s; /* Smooth resizing */
+  transition: transform 0.3s, width 0.3s, height 0.3s; /* Smooth scaling and resizing */
 }
 
 .logo span {
@@ -64,7 +56,7 @@ header {
 
 nav {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   flex-wrap: nowrap;
   padding: 0.5rem 1rem;
@@ -80,6 +72,7 @@ nav a {
 nav a:hover {
   color: #db63e1;
 }
+
 /* Button Styles */
 button, .buttons a {
   display: inline-block;
@@ -96,110 +89,240 @@ button, .buttons a {
   transition: background-color 0.3s, transform 0.3s;
 }
 
-button:hover, .buttons a:hover {
-  background-color: #e18bf0;
-  transform: scale(1.05);
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Georgia', cursive;
 }
 
-button:active, .buttons a:active {
-  background-color: #c5d2b6;
-  transform: scale(0.95);
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures space between title, navbar, and icon */
+  padding: 10px; /* Add some padding */
+  background-color: #d5e2c6;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo span {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  margin: 0 15px;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  border-bottom: 2px solid white;
+}
+
+.navbar-icon {
+  display: none;
+  font-size: 30px;
+  float: right;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  position: relative;
+  z-index: 3; /* Ensure it stays above the navbar-contains */
+}
+
+.navbar-contains {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(229, 226, 226, 0.39);
+  backdrop-filter: blur(5px);
+  width: 100vw;
+  height: 350px;
+  padding: 10px 20px;
+  z-index: 2; /* Lower z-index than .navbar-icon */
+  opacity: 0; /* Start with opacity 0 */
+  transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transitions */
+}
+
+#toggle:checked ~ .navbar-contains {
+  display: flex; /* Show the menu */
+  opacity: 1; /* Fade in */
+  visibility: visible; /* Ensure visibility */
+}
+
+.navbar-contains a {
+  margin: 10px 0;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;
+  transition: color 0.3s ease, padding 0.3s ease, margin 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-contains a:hover {
+  color: #d5e2c6;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.navbar-contains a:first-child {
+  margin-top: 100px;
+}
+
+#toggle {
+  display: none;
+}
+
+#toggle:checked ~ .navbar-contains,
+.navbar-contains:focus-within {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+      display: none;
+  }
+
+  .navbar-icon {
+      display: block; /* Show the navbar icon */
+  }
+
+  .navigation {
+      justify-content: space-between; /* Align title and icon inline */
+  }
+
+  .navbar-contains a {
+      font-size: 1.2rem; /* Reduce font size for mobile */
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .navbar-contains {
+      display: none;
+  }
 }
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
   html {
-    scroll-padding-top: 70px;
+      scroll-padding-top: 70px;
   }
   header {
-    padding: 0.8rem 1.5rem;
+      padding: 0.8rem 1.5rem;
   }
 
   .logo a img {
-    width: 45px;
-    height: 45px;
+      width: 45px;
+      height: 45px;
   }
 
   .logo span {
-    font-size: 1.8rem;
+      font-size: 1.8rem;
   }
 
   nav {
-    padding: 0.4rem 0.8rem;
+      padding: 0.4rem 0.8rem;
   }
 
   nav a {
-    font-size: 1rem;
-    margin: 0 0.6rem;
+      font-size: 1rem;
+      margin: 0 0.6rem;
   }
 }
 
 @media (max-width: 768px) {
   html {
-    scroll-padding-top: 100px; /* Adjusted for stacked layout */
+      scroll-padding-top: 100px; /* Adjusted for stacked layout */
   }
   header {
-    padding: 0.6rem 1rem;
-    flex-direction: column; /* Stack logo and nav vertically */
-    align-items: center;
+      padding: 0.6rem 1rem;
+      flex-direction: column; /* Stack logo and nav vertically */
+      align-items: center;
   }
 
   .logo a img {
-    width: 40px;
-    height: 40px;
+      width: 40px;
+      height: 40px;
   }
 
   .logo span {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
   }
 
   nav {
-    padding: 0.3rem 0.6rem;
+      padding: 0.3rem 0.6rem;
   }
 
   nav a {
-    font-size: 0.9rem;
-    margin: 0 0.5rem;
+      font-size: 0.9rem;
+      margin: 0 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   html {
-    scroll-padding-top: 110px;
+      scroll-padding-top: 110px;
   }
   header {
-    padding: 0.4rem 0.8rem;
+      padding: 0.4rem 0.8rem;
   }
 
   .logo a img {
-    width: 20px;
-    height: 35px;
-    flex-direction: right;
+      width: 20px;
+      height: 35px;
+      flex-direction: right;
   }
 
   .logo span {
-    font-size: 1rem;
-    flex-direction: right;
+      font-size: 1rem;
+      flex-direction: right;
   }
 
   nav {
-    flex-direction: right; /* Stack nav items vertically */
-    padding: 0.2rem 0.4rem;
+      flex-direction: right; /* Stack nav items vertically */
+      padding: 0.2rem 0.4rem;
   }
   .buttons {
-    gap: 4px;
-    padding: 6px;
+      gap: 4px;
+      padding: 6px;
   }
   
   .buttons a {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-    min-width: 80px;
-    border-radius: 4px 4px 0 0;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.8rem;
+      min-width: 80px;
+      border-radius: 4px 4px 0 0;
   }
 
   nav a {
-    font-size: 0.8rem;
-    margin: 0.3rem 0;
+      font-size: 0.8rem;
+      margin: 0.3rem 0;
   }
 }

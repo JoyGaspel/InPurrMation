@@ -8,14 +8,8 @@
 /* Enhanced Smooth Transitions */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Combined height of both headers */
-}
-
-body {
-  /* Add these new properties */
-  opacity: 1;
-  transition: opacity 0.3s ease-in-out;
-  padding-top: 0;
+  scroll-padding-top: 80px; /* This should match your header's height */
+  transition: all 0.3s ease;
 }
 
 /* Page Transition Effect */
@@ -31,10 +25,31 @@ body.fade-out {
 
 /* Smooth Scroll Offset for Fixed Header */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Adjust based on your header height */
+  scroll-padding-top: 80px; /* Adjust based on your header height */
 }
 
+/* Header Styles */
+header {
+  background-color: #d5e2c6;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Page Transition Effect */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Enhanced Button Transitions */
+.buttons a, .nav2 a, .card .read-profile, .back-to-top {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
 /* Trivia Section Styles */
 .Trivia {
   background-color: #fff8f4;
@@ -71,59 +86,6 @@ html {
   font-weight: bold;
   color: #333;
 }
-/* Header Styles */
-header {
-  background-color: #d5e2c6;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo a img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  cursor: pointer;
-  transition: width 0.3s, height 0.3s; /* Smooth resizing */
-}
-
-.logo span {
-  font-size: 2rem;
-  font-family: Georgia, cursive;
-  font-weight: bold;
-  color: #333;
-  transition: font-size 0.3s; /* Smooth resizing */
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  padding: 0.5rem 1rem;
-}
-
-nav a {
-  margin: 0 0.8rem;
-  text-decoration: none;
-  color: #333;
-  font-size: 1.2rem;
-}
-
-nav a:hover {
-  color: #db63e1;
-}
 /* Nav2 Styles - Fixed Horizontal Navigation */
 .nav2 {
   position: fixed;
@@ -138,14 +100,15 @@ nav a:hover {
   white-space: nowrap;
   display: flex;
   justify-content: center;
-  min-height: 44px; /* Base minimum height for touch targets */
+  min-height: 40px; /* Base minimum height for touch targets */
+  top: auto;
 }
 
 .nav2 ul {
   display: inline-flex;
   list-style: none;
   padding: 0 20px;
-  margin-left: 300px;
+  margin-left: 200px;
   gap: 10px;
 }
 
@@ -448,7 +411,6 @@ th, td {
   line-height: 1.6;
   margin-top: 1px;
 }
-
 .breed-image-2 {
   width: 800px;
   height: auto;
@@ -465,15 +427,18 @@ th, td {
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  align-items: center;
-  padding: 0 30px;
+  align-items: flex-start; /* Changed to flex-start for better alignment */
+  padding: 0 15px;
+  flex-wrap: wrap; /* Added to allow wrapping on smaller screens */
 }
 
 .content-text {
-  width: 100%;
-  text-align: justify;
+  flex: 1;
+  text-align: center;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
 }
 
 .content-text p {
@@ -481,6 +446,7 @@ th, td {
   line-height: 1.6;
   margin-top: 1px;
 }
+
 
 /* Content-specific designs */
 #Nutrition {
@@ -595,7 +561,7 @@ footer {
 /* Media Queries */
 @media only screen and (max-width: 320px) {
   .nav2{
-    top: 100px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -618,7 +584,7 @@ footer {
 
 @media only screen and (min-width: 321px) and (max-width: 375px) {
   .nav2{
-    top: 100px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -641,7 +607,7 @@ footer {
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
   .nav2{
-    top: 80px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -663,7 +629,7 @@ footer {
 
 @media only screen and (min-width: 426px) and (max-width: 480px) {
   .nav2{
-    top: 75px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -687,7 +653,7 @@ footer {
 @media only screen and (min-width: 480px) and (max-width: 768px) {
 
   .nav2{
-    top: 85px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -710,7 +676,7 @@ footer {
 
 @media only screen and (min-width: 768px) and (max-width: 888px) {
   .nav2{
-    top: 100px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -733,7 +699,7 @@ footer {
 
 @media only screen and (min-width: 888px) and (max-width: 1024px) {
   .nav2{
-    top: 70px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -756,7 +722,7 @@ footer {
 
 @media only screen and (min-width: 1024px) and (max-width: 1062px) {
   .nav2{
-    top: 120px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -912,7 +878,7 @@ footer {
 }
 @media (max-width: 1024px) and (min-width: 905px) {
   .nav2 {
-    top: 70px;
+    top: auto;
     padding: 9px 0;
   }
   .nav2 a {
@@ -921,31 +887,6 @@ footer {
   }
   .nav2 ul {
     gap: 12px;
-  }
-}
-
-@media (max-width: 1024px) {
-  html {
-    scroll-padding-top: 140px;
-  }
-  .content-section {
-    flex-direction: column;
-    padding: 0 40px;
-  }
-
-  .content-text {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .breed-image-2 {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .breed-image {
-    width: 1056px;
-    height: 300px;
   }
 }
 
@@ -982,15 +923,6 @@ footer {
   .card img {
     height: 280px;
   }
-
-  .content-section {
-    padding: 0 20px;
-  }
-
-  .content-text p {
-    font-size: 1.2em;
-  }
-
   .buttons a {
     font-size: 0.9rem;
     padding: 8px 16px;
@@ -1020,6 +952,17 @@ footer {
   .footer-section {
     text-align: center;
   }
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .back-to-top img {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1038,14 +981,6 @@ footer {
   .main-title-breed {
     font-size: 1.5rem;
   }
-  .content-section {
-    padding: 0 10px;
-  }
-
-  .content-text p {
-    font-size: 1em;
-  }
-
   .buttons {
     gap: 4px;
     padding: 6px;
@@ -1118,6 +1053,75 @@ footer {
   }
   .card img {
     height: 180px;
+  }
+  .back-to-top {
+    width: 30px;
+    height: 30px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  .back-to-top img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 320px) {
+  .main-title-breed {
+      font-size: 1rem;
+  }
+  .breed-image {
+      width: 100%;
+      height: auto;
+  }
+  h2 {
+      font-size: 1rem;
+  }
+  p {
+      font-size: 0.9rem;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .content-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-text {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .content-text p {
+      font-size: 1.2em;
+  }
+
+  .breed-image-2 {
+      width: 100%;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .content-text {
+      width: 100%;
+      padding: 5px;
+  }
+
+  .content-text p {
+      font-size: 1em;
+  }
+
+  .breed-image-2 {
+      width: 100%;
+      max-width: 100%;
   }
 }
 /* End of CSS */

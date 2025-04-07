@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Breed Comparison</title>
-    <header>
-        <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InPurrMation</title>
+    <title>Responsive Navbar</title>
     <style>
-        /* Style the header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
-        /* Style the logo */
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensures space between title, navbar, and icon */
+            padding: 10px; /* Add some padding */
+        }
+
         .logo {
             display: flex;
             align-items: center;
@@ -35,247 +31,133 @@
         }
 
         .logo span {
-            font-size: 1.5em;
+            color: rgb(0, 0, 0);
+            font-size: 24px;
             font-weight: bold;
         }
 
-        nav {
+        .navbar {
             display: flex;
-            align-items: center;
+            margin: 0;
+            padding: 0;
         }
 
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333;
-        }
-
-        /* Hide nav2 links by default */
-        .nav2 {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-
-        .nav2 li {
+        .navbar li {
             list-style: none;
         }
 
-        .nav2 a {
-            padding: 10px 20px;
-            display: block;
+        .navbar a {
             text-decoration: none;
-            color: #333;
+            color: rgb(0, 0, 0);
+            margin: 0 15px;
+            font-size: 18px;
         }
 
-        /* Style the hamburger menu */
-        .hamburger {
+        .navbar a:hover {
+            border-bottom: 2px solid white;
+        }
+
+        .navbar-icon {
+            display: none;
+            font-size: 30px;
+            float: right;
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            position: relative;
+            z-index: 3; /* Ensure it stays above the navbar-contains */
+        }
+
+        .navbar-contains {
             display: none;
             flex-direction: column;
-            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(189, 179, 179, 0.5);
+            backdrop-filter: blur(5px);
+            width: 100vw;
+            height: 95%;
+            padding: 10px 20px;
+            z-index: 2; /* Lower z-index than .navbar-icon */
         }
 
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 4px 0;
+        .navbar-contains a {
+            margin: 10px 0;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 30px;
         }
 
-        /* Add checkbox for toggling */
-        #menuToggle {
-            display: none;
+        .navbar-contains a:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50px;
+            padding: 10px 20px;
+            transition: 0.3s;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
         }
 
-        #menuToggle:checked + .nav2 {
+        .navbar-contains a:first-child {
+            margin-top: 100px;
+        }
+
+        #toggle:checked ~ .navbar-contains {
             display: flex;
         }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            nav a {
-                display: none; /* Hide original nav links on small screens */
+        @media only screen and (max-width: 768px) {
+            .navbar {
+                display: none;
             }
 
-            .hamburger {
-                display: flex; /* Show hamburger menu on small screens */
+            .navbar-icon {
+                display: block; /* Show the navbar icon */
             }
 
-            .nav2 {
-                display: none; /* Hide nav2 links by default on small screens */
+            .navigation {
+                justify-content: space-between; /* Align title and icon inline */
             }
+        }
 
-            #menuToggle:checked + .nav2 {
-                display: flex; /* Show nav2 links when hamburger menu is clicked */
+        @media only screen and (min-width: 769px) and (max-width: 1024px) {
+            .navbar-contains {
+                display: none;
             }
         }
     </style>
 </head>
-
 <body>
     <header>
-        <div class="logo">
-            <a href="index.html" title="InPurrMation HomePage">
-                <img src="./Assets/cat-logo.png" alt="Cat Logo">
-            </a>
-            <span>InPurrMation</span>
-        </div>
-        <nav>
+        <input type="checkbox" id="toggle" style="display: none;">
+        <label for="toggle" class="navbar-icon">
+            <span style="font-size: 30px; cursor: pointer;">&#9776;</span>
+        </label>
+        <div class="navigation">
             <div class="logo">
                 <a href="index.html" title="InPurrMation HomePage">
-                    <p>🐾Home</p>
+                    <img src="./Assets/cat-logo.png" alt="Cat Logo">
                 </a>
+                <span>InPurrMation</span>
             </div>
+            <ul class="navbar">
+                <li><a href="index.html">🐾Home</a></li>
+                <li><a href="breeds.html">🐾Cat Breeds</a></li>
+                <li><a href="accessories.html">🐾Cat Accessories</a></li>
+                <li><a href="contactus.html">🐾Contact Us</a></li>
+                <li><a href="aboutus.html">🐱About Us</a></li>
+            </ul>
+        </div>
+        <div class="navbar-contains">
+            <a href="index.html">🐾Home</a>
             <a href="breeds.html">🐾Cat Breeds</a>
-            <a href="acccessories.html">🐾Cat Accessories</a>
+            <a href="accessories.html">🐾Cat Accessories</a>
             <a href="contactus.html">🐾Contact Us</a>
             <a href="aboutus.html">🐱About Us</a>
-
-            <!-- Hamburger menu icon -->
-            <div class="hamburger">
-                <label for="menuToggle">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </label>
-            </div>
-        </nav>
+        </div>
     </header>
-
-    <!-- Hamburger nav2 -->
-    <input type="checkbox" id="menuToggle">
-    <div class="nav2">
-        <ul>
-            <li><b><h2>CAT CATEGORIES:</h2></b></li>
-            <li><a href="#Abyssinian">A</a></li>
-            <li><a href="#Balinese">B</a></li>
-            <li><a href="#California Spangled Cat">C</a></li>
-            <li><a href="#Devon Rex">D</a></li>
-            <li><a href="#Egyptian Mau">E</a></li>
-            <!--li><a href="#German Rex">F</a></li-->
-            <li><a href="#German Rex">G</a></li>
-            <li><a href="#Havana Brown">H</a></li>
-            <!--li><a href="#Japanese Bobtail">I</a></li-->
-            <li><a href="#Japanese Bobtail">J</a></li>
-            <li><a href="#Korat">K</a></li>
-            <li><a href="#LaPerm">L</a></li>
-            <li><a href="#Maine Coon">M</a></li>
-            <li><a href="#Nebelung">N</a></li>
-            <li><a href="#Ocicat">O</a></li>
-            <li><a href="#Persian">P</a></li>
-            <!--li><a href="#Persian">Q</a></li-->
-            <li><a href="#Ragamuffin">R</a></li>
-            <li><a href="#Savannah">S</a></li>
-            <li><a href="#Thai Cat (Old-Style Siamese)">T</a></li>
-            <li><a href="#Ukrainian Levkoy">U</a></li>
-            <!--li><a href="#V">V</a></li>
-            <li><a href="#W">W</a></li>
-            <li><a href="#X">X</a></li-->
-            <li><a href="#York Chocolate">Y</a></li>
-            <!--li><a href="#Z">Z</a></li-->
-        </ul>
-    </div>
-</body>
-
-</html>
-</head>
-<body>
-    <div class="header">Compare Breed</div>
-    
-    <div id="Overview" class="content">
-        <table>
-            <tr>
-                <th>ORIGIN</th>
-                <td>Abyssinia (Ethiopia)</td>
-            </tr>
-            <tr>
-                <th>HEIGHT</th>
-                <td>8-10 inches</td>
-            </tr>
-            <tr>
-                <th>ADULT WEIGHT</th>
-                <td>6-10 pounds</td>
-            </tr>
-            <tr>
-                <th>LIFE SPAN</th>
-                <td>14-17+ years</td>
-            </tr>
-            <tr>
-                <th>TEMPERAMENT</th>
-                <td>Playful, willful, active, intelligent</td>
-            </tr>
-            <tr>
-                <th>OTHER NAMES</th>
-                <td>Aby</td>
-            </tr>
-            <tr>
-                <th>GROUP</th>
-                <td>Medium-sized short-haired</td>
-            </tr>
-            <tr>
-                <th>PRICE</th>
-                <td>$1,000-$2,000 (57-115k PHP)</td>
-            </tr>
-        </table>
-    </div>
-    
-    <div id="Characteristics" class="content">
-        <table>
-            <tr>
-                <th>Characteristics</th>
-                <th>Percentage</th>
-            </tr>
-            <tr>
-                <td><b>Affection Level:</b> Breeds with a high affection level want to give and receive a lot of attention, while less-affectionate breeds are not as interested in petting and snuggles.</td>
-                <td>50%</td>
-            </tr>
-            <tr>
-                <td><b>Activity Level:</b> Breeds with high activity levels will engage more in active play and demand more space and attention.</td>
-                <td>90%</td>
-            </tr>
-            <tr>
-                <td><b>Pet-Friendly:</b> How well the breed tends to get along with cats, dogs, and other pets.</td>
-                <td>80%</td>
-            </tr>
-            <tr>
-                <td><b>Kid-Friendly:</b> Breeds with a higher rating in this area tend to be gentle and patient, while lower-rated breeds may feel uncomfortable with children.</td>
-                <td>80%</td>
-            </tr>
-            <tr>
-                <td><b>Sociability:</b> Breeds with a higher sociability rating will want to spend time with you all day, while less-sociable breeds seldom seek out human interaction.</td>
-                <td>80%</td>
-            </tr>
-            <tr>
-                <td><b>Intelligence:</b> Breeds with higher intelligence ratings are more curious, investigative, and easy to train. Less-intelligent breeds are less trainable but often laid-back and easygoing.</td>
-                <td>90%</td>
-            </tr>
-            <tr>
-                <td><b>Playfulness:</b> Breeds that score higher in this area have strong hunting instincts that make them great playtime companions.</td>
-                <td>70%</td>
-            </tr>
-            <tr>
-                <td><b>Independence:</b> Breeds that score higher in this area are able to spend hours alone, while less-independent breeds require plenty of attention.</td>
-                <td>60%</td>
-            </tr>
-            <tr>
-                <td><b>Vocality:</b> A higher rating in this area indicates a breed prone to plenty of meowing and other vocalizations, while less-vocal breeds are happy to stay quiet.</td>
-                <td>60%</td>
-            </tr>
-            <tr>
-                <td><b>Grooming:</b> Breeds with higher grooming scores require more maintenance like brushing and bathing, while lower-scored breeds are virtually maintenance-free.</td>
-                <td>50%</td>
-            </tr>
-        </table>
-    </div>
-    
-    <div class="tabs">
-        <a href="#Overview" class="tab">Overview</a>
-        <a href="#Characteristics" class="tab">Characteristics</a>
-    </div>
 </body>
 </html>
