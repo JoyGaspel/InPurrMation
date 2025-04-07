@@ -570,8 +570,8 @@ footer {
   .nav2 a {
     font-size: 0.8rem;
   }
-  
-  .card{
+    
+    .card{
     max-width: 90%;
     min-width: 90%;
   }
@@ -581,18 +581,16 @@ footer {
   }
 
 }
-
 @media only screen and (min-width: 321px) and (max-width: 375px) {
   .nav2{
-    top: auto;
-    font-size: 10px;
+    top: 100px;
   }
 
   .nav2 ul{
     margin-left: 1200px;
   }
   .nav2 a {
-    font-size: 6px;
+    font-size: 0.8rem;
   }
   
   .card{
@@ -608,7 +606,7 @@ footer {
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
   .nav2{
-    top: auto;
+    top: 80px;
   }
 
   .nav2 ul{
@@ -630,7 +628,7 @@ footer {
 
 @media only screen and (min-width: 426px) and (max-width: 480px) {
   .nav2{
-    top: auto;
+    top: 75px;
   }
 
   .nav2 ul{
@@ -650,6 +648,7 @@ footer {
   }
 
 }
+
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
 
@@ -742,117 +741,6 @@ footer {
     top: 20px;
   }
 
-}
-
-/* Content-specific designs */
-#Nutrition {
-  border-left: 5px solid #6a8c6b;
-  background-color: #cab5a4;
-}
-
-#Grooming {
-  border-left: 5px solid #6a8c6b;
-  background-color: #cab5a4;
-}
-
-#Exercise {
-  border-left: 5px solid #6a8c6b;
-  background-color: #cab5a4;
-}
-
-#Health {
-  border-left: 5px solid #6a8c6b;
-  background-color: #cab5a4;
-}
-
-/* ==================== */
-  /* BACK TO TOP BUTTON */
-  /* ==================== */
-  .back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    z-index: 1000;
-  }
-  
-  .back-to-top:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  }
-  
-  .back-to-top img {
-    width: 90px;
-    height: 90px;
-  }
-  
-/* Footer */
-footer {
-  background-color: #d5e2c6;
-  color: #000000;
-  padding: 20px 10px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1rem;
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.footer-section {
-  flex: 1 1 300px;
-  margin: 10px;
-}
-
-.footer-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #705c4b;
-}
-
-.footer-section p,
-.footer-section ul {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
-  margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-  color: #3d3831;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: #997c64;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9rem;
-  border-top: 1px solid #444;
-  padding-top: 10px;
 }
 
 /* Media Queries */
