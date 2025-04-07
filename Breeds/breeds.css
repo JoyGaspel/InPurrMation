@@ -92,7 +92,7 @@ body.fade-out {
   top: 85px; /* Fixed position below the main header */
   background-color: #f4e4d4; /* Match your body background */
   z-index: 999; /* Slightly lower than main header */
-  padding: 10px 0;
+  padding: 8px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
   overflow-x: auto;
@@ -319,18 +319,6 @@ button:active, .buttons a:active {
   margin: 1.5rem 0;
   max-width: 800px;
   padding: 0 1rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-  .content {
-    width: 95%;
-    padding: 1.2rem;
-    margin: 1.5rem auto;
-  }
-  .content p {
-    line-height: 1.6;
-  }
 }
 
 /* Buttons */
@@ -565,7 +553,7 @@ footer {
   }
 
   .nav2 ul{
-    margin-left: 1250px;
+    margin-left: 1200px;
   }
   .nav2 a {
     font-size: 0.8rem;
@@ -579,11 +567,10 @@ footer {
   .image-container{
     top: 20px;
   }
-
 }
-@media only screen and (min-width: 321px) and (max-width: 375px) {
+@media screen and (min-width: 425px) and (max-width: 689px) {
   .nav2{
-    top: 100px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -601,16 +588,59 @@ footer {
   .image-container{
     top: 20px;
   }
+  
+}
+@media only screen and (min-width:375px) and (max-width: 425px) {
+  .nav2{
+    top: auto;
+  }
+
+  .nav2 ul{
+    margin-left: 1200px;
+  }
+  .nav2 a {
+    font-size: 0.8rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .nav2{
+    top: auto;
+  }
+
+  .nav2 ul{
+    margin-left: 13500px;
+  }
+  .nav2 a {
+    font-size: 0.3rem;
+  }
+  
+  .card{
+    max-width: 90%;
+    min-width: 90%;
+  }
+  
+  .image-container{
+    top: 20px;
+  }
 
 }
 
 @media only screen and (min-width: 376px) and (max-width: 425px) {
   .nav2{
-    top: 80px;
+    top: auto;
   }
 
   .nav2 ul{
-    margin-left: 1150px;
+    margin-left: 1200px;
   }
   .nav2 a {
     font-size: 0.8rem;
@@ -628,7 +658,7 @@ footer {
 
 @media only screen and (min-width: 426px) and (max-width: 480px) {
   .nav2{
-    top: 75px;
+    top: auto;
   }
 
   .nav2 ul{
@@ -680,7 +710,7 @@ footer {
   }
 
   .nav2 ul{
-    margin-left: 780px;
+    margin-left: 800px;
   }
   .nav2 a {
     font-size: 0.8rem;
@@ -739,6 +769,14 @@ footer {
   
   .image-container{
     top: 20px;
+  }
+  .content {
+    width: 95%;
+    padding: 1.2rem;
+    margin: 1.5rem auto;
+  }
+  .content p {
+    line-height: 1.6;
   }
 
 }
@@ -852,6 +890,24 @@ footer {
     width: 70px;
     height: 70px;
   }
+  .content-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-text {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .content-text p {
+      font-size: 1.2em;
+  }
+
+  .breed-image-2 {
+      width: 100%;
+      max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -954,49 +1010,9 @@ footer {
     width: 50px;
     height: 50px;
   }
-}
-@media (max-width: 320px) {
-  .main-title-breed {
-      font-size: 1rem;
-  }
-  .breed-image {
-      width: 100%;
-      height: auto;
-  }
-  h2 {
-      font-size: 1rem;
-  }
-  p {
-      font-size: 0.9rem;
-  }
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
   .content-section {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .content-text {
-      width: 100%;
-      padding: 10px;
-  }
-
-  .content-text p {
-      font-size: 1.2em;
-  }
-
-  .breed-image-2 {
-      width: 100%;
-      max-width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .content-section {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .content-text {
@@ -1013,4 +1029,20 @@ footer {
       max-width: 100%;
   }
 }
+@media (max-width: 320px) {
+  .main-title-breed {
+      font-size: 1rem;
+  }
+  .breed-image {
+      width: 100%;
+      height: auto;
+  }
+  h2 {
+      font-size: 1rem;
+  }
+  p {
+      font-size: 9px;
+  }
+}
+
 /* End of CSS */
