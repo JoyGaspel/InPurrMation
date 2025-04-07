@@ -1138,7 +1138,7 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       line-height: 1.1;
       padding: 0 8px;
-      font-size: 10px;
+      font-size: 0.1rem;
   }
   header {
       padding: 0.8rem;
