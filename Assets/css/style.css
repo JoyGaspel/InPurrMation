@@ -924,6 +924,7 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       line-height: 1.1;
       padding: 0 10px;
+      font-size: 5px;
     }
   
     header {
@@ -1032,7 +1033,7 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       line-height: 1.1;
       padding: 0 8px;
-      font-size: 3px;
+      font-size: 6px;
   }
   header {
       padding: 0.8rem;
@@ -1078,6 +1079,18 @@
 
   .logo span {
       font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 390px) {
+  .centered-text {
+    font-size: 8px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+  .centered-text {
+    font-size: 9px;
   }
 }
 
