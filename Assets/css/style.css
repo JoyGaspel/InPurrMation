@@ -977,7 +977,6 @@
       font-size: 1.5rem;
     }
   }
-
 /* Smaller width styles for max-width of 320px */
 @media (max-width: 320px) {
   .main-title {
@@ -1033,7 +1032,7 @@
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
       line-height: 1.1;
       padding: 0 8px;
-      font-size: 9px;
+      font-size: 3px;
   }
   header {
       padding: 0.8rem;
@@ -1081,6 +1080,7 @@
       font-size: 1.3rem;
   }
 }
+
 /* Responsive Styles */
 @media (max-width: 1200px) {
     .home-title {
